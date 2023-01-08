@@ -68,33 +68,33 @@ const Products = () => {
 
     return (
 
-        <section className="h-100" >
+        <section className="h-100 comProduc" >
 
-            <div className="header">
+            <div className="header d-flex align-items-center shadow-lg p-3 mb-5 ">
                 <div>
-                    <img src={logo} alt={logo} className="logo" />
+                    <img src={logo} alt={logo} className="logoProduc" />
                 </div>
-                <ul className="ulHerder">
+                <ul className="ulHerder d-flex justify-content-around">
                     <li className="listaHerder"><a href="/Products">Productos</a></li>
                     <li className="listaHerder"><a href="/orders">Pedidos</a></li>
                 </ul>
             </div>
 
-            <section className="vistaProductos">
-                <div className="ulOrdenes">
-                    <button type="button" className="butonPro" id="desayuno" onClick={cambiaMenu}>Desayunos</button>
+            <section className="shadow-lg">
+                <div className="ulOrdenes d-flex align-items-center">
+                    <button type="button" className="butonPro m-3" id="desayuno" onClick={cambiaMenu}>Desayunos</button>
                     <button type="button" className="butonPro" id="almuerzo" onClick={cambiaMenu}>Almuerzo</button>
                 </div>
 
-                <section className="sectionProducto">
-                    <div className="listProduc">
+                <section className="sectionProducto d-flex">
+                    <div className="listProduc d-flex">
                         {menu !== null ? (
                             menu.map(produc => (
-                                <section key={produc.id} className="cardProducto">
+                                <section key={produc.id} className="cardProducts">
                                     <img src={produc.image} alt="" className="imgProduct" />
                                     <p className="nombreProducto" >{produc.name} </p>
                                     <p className="precio">${produc.price}</p>
-                                    <button className="agreagar" type="button" onClick={() => agregarPoductos(produc)}>Añadir</button>
+                                    <button className="agreagar btn btn-primary w-50" type="button" onClick={() => agregarPoductos(produc)}>Añadir</button>
                                 </section>
                             ))
                         ) : ('El token ha expirado, Porfvaor vuelva a entrar para generar un nuevo')

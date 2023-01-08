@@ -74,7 +74,7 @@ const Login = () => {
         <img src={logo} alt={logo} className="logoForm" />
       </div>
 
-      <form className='card  h-50 w-50 shadow-lg p-3 mb-5 bg-white rounded  opacity-0.5;'>
+      <form className='card  h-50 w-50 shadow-lg p-3 mb-5 bg-white rounded  .bg-light.bg-gradient;'>
         <div className='form-container text-center'>
           <h2 className="tittle-login">LOGIN</h2>
           <div className="form-group input-group p-2"  >

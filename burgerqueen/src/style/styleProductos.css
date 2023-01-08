@@ -1,0 +1,49 @@
+.comProduc{
+    background-color:  #ffd88b;
+     height:100vh;
+}
+.header{
+    background-color: #fdf8e5;
+}
+.ulHerder{
+    width: 60%;
+    margin-left: 50px;
+    list-style: none;
+}
+.logoProduc{
+    width: 80px;
+}
+
+.ulOrdenes{
+    background-color:white;
+    margin-top: 25px;
+    height: 56px;
+    width:70%;
+    margin-left: 15px;
+
+}
+.sectionProducto{
+    height: 64vmax;
+    margin-left: 15px;
+}
+.listProduc{
+    background-color:  #fdf8e5;
+    width: 70%;
+    height: 58vmax;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.imgProduct{
+    width: 100px;
+}
+.cardProducts{
+    background-color:white;
+    height: 25vmax;
+    width: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
