@@ -14,7 +14,7 @@ const Products = () => {
     // useEffect accede a las variables del estado
     useEffect(() => {
         Productos(setproducto);
-        if(agregado.length){
+        if (agregado.length) {
 
             setTotal(agregado.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0))
         }
@@ -48,7 +48,7 @@ const Products = () => {
         } else {
             setagregado([...agregado, { ...produc, quantity: 1 }])
             setTotal(produc.price)
-        }     
+        }
 
     }
 
@@ -68,9 +68,9 @@ const Products = () => {
 
     return (
 
-        <section className="h-100 comProduc" >
+        <section className="comProduc" >
 
-            <div className="header d-flex align-items-center shadow-lg p-3 mb-5 ">
+            <div className="header d-flex align-items-center shadow-lg  ">
                 <div>
                     <img src={logo} alt={logo} className="logoProduc" />
                 </div>
@@ -80,10 +80,11 @@ const Products = () => {
                 </ul>
             </div>
 
-            <section className="shadow-lg">
+            <section className="">
                 <div className="ulOrdenes d-flex align-items-center">
                     <button type="button" className="butonPro m-3" id="desayuno" onClick={cambiaMenu}>Desayunos</button>
                     <button type="button" className="butonPro" id="almuerzo" onClick={cambiaMenu}>Almuerzo</button>
+
                 </div>
 
                 <section className="sectionProducto d-flex">
@@ -94,7 +95,7 @@ const Products = () => {
                                     <img src={produc.image} alt="" className="imgProduct" />
                                     <p className="nombreProducto" >{produc.name} </p>
                                     <p className="precio">${produc.price}</p>
-                                    <button className="agreagar btn btn-primary w-50" type="button" onClick={() => agregarPoductos(produc)}>Añadir</button>
+                                    <button className="agreagar btn btn-primary w-50" type="button" onClick={() => agregarPoductos(produc)}><i class="material-icons ">add_circle_outline</i></button>
                                 </section>
                             ))
                         ) : ('El token ha expirado, Porfvaor vuelva a entrar para generar un nuevo')
@@ -103,31 +104,37 @@ const Products = () => {
 
 
                     {/* //produstos agragados */}
-                    <div className="lisProductosAdd" >
+                    <div className="lisProductosAdd"  >
+                    <input type="text" name="" id="" placeholder="Nombre" className="info" />
+                        <input type="text" name="" id="" placeholder="N° Mesa" className="info" />
                         {/* <h2 className="tituloAgregado">Productos agregados</h2> */}
-                        <section className="car">
+                        <section className="sectionProductsAgre">
                             {agregado.map(producAdd => (
                                 <div className="carProductosAdd" key={producAdd.id}>
                                     <p className="nombreProductoAdd" >{producAdd.name} </p>
                                     <p className="precioProducAdd">${producAdd.price} </p>
                                     <div className="conCantidad">
-                                        <button className="cantidades" onClick={remove}>-</button><p className="cantidad">{producAdd.quantity}</p><button className="cantidades" onClick={agre}>+</button>
-                                        <button className="eliminarProducto" >Elimina</button>
+                                        <div className="cantidades menos" onClick={remove}><h2>-</h2></div>
+                                        <div className="cantidad">{producAdd.quantity}</div>
+                                        <div className="cantidades" onClick={agre}><h2>+</h2></div>
+                                        <div className="eliminarProducto" ><i class="material-icons ">delete_forever</i></div>
                                     </div>
                                     <hr />
                                 </div>
                             ))
                             }
                         </section>
-                        <p>Total: {total}</p>
-                        <div className="botonesAddConfirmar">
-                            <button className="cancelar">Cancelar</button>
-                            <button className="confirmar">Confirmar</button>
+                        <div>
+                            <p>Total: {total}</p>
+                            <div className="botonesAddConfirmar d-flex">
+                                <button className="cancelar"><i class="material-icons ">cancel</i></button>
+                                <button className="confirmar"><i class="material-icons ">check</i></button>
+                            </div>
                         </div>
+
                     </div>
                 </section>
             </section>
-
         </section>
 
     )

@@ -1,49 +1,129 @@
-.comProduc{
-    background-color:  #ffd88b;
-     height:100vh;
+.comProduc {
+    background-color: #ffd88b;
+    height: 100vh;
 }
-.header{
+
+.header {
     background-color: #fdf8e5;
 }
-.ulHerder{
+
+.ulHerder {
     width: 60%;
     margin-left: 50px;
     list-style: none;
 }
-.logoProduc{
+
+.logoProduc {
     width: 80px;
 }
 
-.ulOrdenes{
-    background-color:white;
+.ulOrdenes {
+    background-color: white;
     margin-top: 25px;
     height: 56px;
-    width:70%;
+    width: 70%;
     margin-left: 15px;
 
 }
-.sectionProducto{
-    height: 64vmax;
+
+.sectionProducto {
+    height: 70vh;
     margin-left: 15px;
 }
-.listProduc{
-    background-color:  #fdf8e5;
+
+.listProduc {
+    background-color: #fdf8e5;
     width: 70%;
-    height: 58vmax;
+    height: 75vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    overflow-y: scroll;
+
 }
-.imgProduct{
-    width: 100px;
+
+.imgProduct {
+    width: 70px;
 }
-.cardProducts{
-    background-color:white;
-    height: 25vmax;
-    width: 30%;
+
+.cardProducts {
+    background-color: white;
+    height: 30vh;
+    width: 20%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 15px;
+}
+
+.carProductosAdd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 30vh;
+
+}
+
+.sectionProductsAgre {
+    background-color: #fdf8e5;
+    height: 70vh;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+
+}
+
+.lisProductosAdd {
+    width: 23%;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    height: 75vh;
+}
+
+.conCantidad {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.cantidad {
+    height: 40px;
+    width: 20%;
+    font-size: 20px;
+}
+
+.cantidades {
+    color: blue;
+    width: 20%;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.87);
+
+}
+
+.menos {
+    color: red;
+}
+
+.eliminarProducto {
+    color: red;
+    text-align: center;
+    width: 20%;
+    margin-top: 5px;
+
+}
+
+.cancelar {
+    width: 50%;
+    background-color: red;
+
+}
+
+.confirmar {
+    width: 50%;
+    margin-left: 6px;
+    background-color: rgb(74, 203, 119);
 }
