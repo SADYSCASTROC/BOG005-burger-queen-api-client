@@ -117,13 +117,18 @@
 }
 
 .cancelar {
-    width: 50%;
+    width: 38%;
     background-color: red;
-
+    border-radius: 10%;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .confirmar {
-    width: 50%;
+    width: 38%;
     margin-left: 6px;
     background-color: rgb(74, 203, 119);
+    border-radius: 10%;
+
 }

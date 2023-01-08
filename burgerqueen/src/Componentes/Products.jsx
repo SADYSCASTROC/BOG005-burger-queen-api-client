@@ -45,6 +45,21 @@ const Products = () => {
             }
 
 
+            //
+
+            //  orden:{
+            //     'userId': variableUser,
+            //     'client': idmesa,
+            //     'status': 'pendiente',
+            //     'dateEntry': fecha,
+            //     'products':[]
+            //  }
+
+             
+
+            //
+
+
         } else {
             setagregado([...agregado, { ...produc, quantity: 1 }])
             setTotal(produc.price)
@@ -91,7 +106,7 @@ const Products = () => {
                     <div className="listProduc d-flex">
                         {menu !== null ? (
                             menu.map(produc => (
-                                <section key={produc.id} className="cardProducts">
+                                <section key={produc.id} className="cardProducts" onClick={() => agregarPoductos(produc)}>
                                     <img src={produc.image} alt="" className="imgProduct" />
                                     <p className="nombreProducto" >{produc.name} </p>
                                     <p className="precio">${produc.price}</p>
