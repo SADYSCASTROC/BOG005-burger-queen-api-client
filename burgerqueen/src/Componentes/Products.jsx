@@ -55,7 +55,7 @@ const Products = () => {
             //     'products':[]
             //  }
 
-             
+
 
             //
 
@@ -71,9 +71,15 @@ const Products = () => {
     // console.log(agregado.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0));
 
 
-    const remove = (produc) => {
-        console.log('remover')
+    const onDeleteProduct = (produc) => {
+        const result = agregado.filter(
+            item => item.id !== produc.id
+        );
+        if (agregado.length === 0) {
+            setTotal(total)
+        }
 
+        setagregado(result)
     }
 
     const agre = (produc) => {
@@ -120,7 +126,7 @@ const Products = () => {
 
                     {/* //produstos agragados */}
                     <div className="lisProductosAdd"  >
-                    <input type="text" name="" id="" placeholder="Nombre" className="info" />
+                        <input type="text" name="" id="" placeholder="Nombre" className="info" />
                         <input type="text" name="" id="" placeholder="N° Mesa" className="info" />
                         {/* <h2 className="tituloAgregado">Productos agregados</h2> */}
                         <section className="sectionProductsAgre">
@@ -129,10 +135,10 @@ const Products = () => {
                                     <p className="nombreProductoAdd" >{producAdd.name} </p>
                                     <p className="precioProducAdd">${producAdd.price} </p>
                                     <div className="conCantidad">
-                                        <div className="cantidades menos" onClick={remove}><h2>-</h2></div>
+                                        <div className="cantidades menos"><h2>-</h2></div>
                                         <div className="cantidad">{producAdd.quantity}</div>
                                         <div className="cantidades" onClick={agre}><h2>+</h2></div>
-                                        <div className="eliminarProducto" ><i class="material-icons ">delete_forever</i></div>
+                                        <div className="eliminarProducto" onClick={() => onDeleteProduct(producAdd)} ><i class="material-icons ">delete_forever</i></div>
                                     </div>
                                     <hr />
                                 </div>
