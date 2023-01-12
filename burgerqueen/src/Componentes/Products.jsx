@@ -15,16 +15,15 @@ const Products = () => {
     useEffect(() => {
         Productos(setproducto);
         if (agregado.length) {
-
             setTotal(agregado.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0))
+        } else {
+            setTotal(agregado.reduce((acumulador, { price, quantity }) => acumulador - (price * quantity), 0))
         }
 
     }, [agregado])
 
     const cambiaMenu = (event) => {
-        // console.log(producto)
         const result = producto.filter(item => item.type.toLowerCase() === event.target.id);
-        // console.log(result)
         setmenu(result)
         console.log()
     }
@@ -35,50 +34,24 @@ const Products = () => {
                 const product = agregado.map(item =>
                     item.id === produc.id
                         ? { ...item, quantity: item.quantity + 1 }
-                        : item
+                        : item      
                 );
 
-                // return 
                 setagregado([...product])
             } else {
                 setagregado([...agregado, { ...produc, quantity: 1 }])
             }
 
-
-            //
-
-            //  orden:{
-            //     'userId': variableUser,
-            //     'client': idmesa,
-            //     'status': 'pendiente',
-            //     'dateEntry': fecha,
-            //     'products':[]
-            //  }
-
-
-
-            //
-
-
         } else {
             setagregado([...agregado, { ...produc, quantity: 1 }])
             setTotal(produc.price)
         }
-
     }
-
-    // console.log(agregado)
-    // console.log(agregado.reduce((acumulador, { price, quantity }) => acumulador + (price * quantity), 0));
-
 
     const onDeleteProduct = (produc) => {
         const result = agregado.filter(
             item => item.id !== produc.id
         );
-        if (agregado.length === 0) {
-            setTotal(total)
-        }
-
         setagregado(result)
     }
 
